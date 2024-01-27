@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import Divider from "@mui/material/Divider";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-
+import { useNavigate } from "react-router";
 function Navbar() {
   const isMobile = window.screen.width < 768;
   const [active, setActive] = useState("nav__menu");
@@ -17,16 +16,15 @@ function Navbar() {
       setIcon("nav__toggler toggle");
     } else setIcon("nav__toggler");
   };
-
+  const navigate = useNavigate();
   return (
     <NavbarContainer>
       <nav className="nav">
-        <a href="/" className="nav__brand">
-          Sko & nyckel service
-        </a>
+        <div className="nav__brand" onClick={() => navigate("/")}>
+          Simons sko & nyckelservice
+        </div>
 
         <ul className={active}>
-          {isMobile && <p>Information</p>}
           <li className="nav__item">
             <div className="link_container">
               <a href="/about" className="nav__link">
@@ -54,7 +52,7 @@ function Navbar() {
             <div className="link_container">
               {" "}
               <a href="/services" className="nav__link">
-                Lagningar & Priser
+                Sortiment
                 {isMobile && (
                   <ArrowForwardIosIcon className="nav__link_arrow" />
                 )}
@@ -98,6 +96,11 @@ export const NavbarContainer = styled.div`
   }
   .nav__brand {
     margin-top: 0.5em;
+    cursor: pointer;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    color: white;
+    font-size: 20px;
   }
   .logo {
     width: "100%";
@@ -134,20 +137,22 @@ export const NavbarContainer = styled.div`
 
     .nav__brand {
       text-align: center;
-      margin-left: 7em;
+      margin-left: 5em;
       color: #46495c;
     }
     .nav__toggler {
       display: block;
       cursor: pointer;
+      margin-right: 1em;
     }
     .nav__menu {
+      overflow: hidden;
       z-index: 999;
       position: fixed;
       top: 6.1vh;
       right: 0;
-      height: 96vh;
-      width: 65vw;
+      height: 100%;
+      width: 95vw;
       background-color: #faf9f9fb;
       flex-direction: column;
       transform: translateX(100%);

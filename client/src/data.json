@@ -1,0 +1,26 @@
+[
+  {
+    "id": "#keys",
+    "title": "Nyckelkopiering",
+    "des": "Nyckelkopiering till hus, bil m.m",
+    "img": "/assets/keys.jpg"
+  },
+  {
+    "id": "#shoes",
+    "title": "Skoreparationer",
+    "des": "Lagning av skor, sulor, klackar m.m",
+    "img": "/assets/shoes.jpg"
+  },
+  {
+    "id": "#batteries",
+    "title": "Batteribyten",
+    "des": "Batteribyten till klockor, bilnyckel, båtnyckel m.m",
+    "img": "/assets/batteries.jpg"
+  },
+  {
+    "id": "#riding",
+    "title": "Ridsport-lagning",
+    "des": "Lagning av ridsports utrustning, sadel, stövlar m.m",
+    "img": "/assets/sadel.jpg"
+  }
+]

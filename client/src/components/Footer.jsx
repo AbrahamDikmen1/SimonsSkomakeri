@@ -7,7 +7,7 @@ const Footer = () => {
     <FooterContainer>
       <div className="sb_footer_section_padding">
         <div className="sb__footer-copyright">
-          <p>© {new Date().getFullYear()} Balsam care AB</p>
+          <p>© {new Date().getFullYear()} Simons sko & nyckelservice</p>
         </div>
       </div>
     </FooterContainer>
