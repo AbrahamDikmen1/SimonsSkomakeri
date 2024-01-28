@@ -22,9 +22,7 @@ const ContactPage = () => {
         >
           <Navbar />
           <Divider style={{ backgroundColor: "white" }} />
-          <div className="text-container">
-       
-          </div>
+          <div className="text-container"></div>
           <Divider style={{ backgroundColor: "white" }} />
         </div>
 
@@ -224,6 +222,7 @@ export const ContactPageContainer = styled.div`
         text-align: center;
         margin: 10vh auto;
         padding: 1vw;
+        margin: 0 30% 0 30%;
         .top-text {
           font-size: 140%;
           color: white;
@@ -237,7 +236,6 @@ export const ContactPageContainer = styled.div`
         }
         .boxes {
           padding: 2vh;
-          margin: 0 30% 0 30%;
           justify-content: center;
 
           .phone {
