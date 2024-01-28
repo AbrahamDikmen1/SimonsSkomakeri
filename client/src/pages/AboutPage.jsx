@@ -18,9 +18,7 @@ const AboutPage = () => {
         >
           <Navbar />
           <Divider style={{ backgroundColor: "white" }} />
-          <div className="text-container">
-       
-          </div>
+          <div className="text-container"></div>
           <Divider style={{ backgroundColor: "white" }} />
         </div>
 

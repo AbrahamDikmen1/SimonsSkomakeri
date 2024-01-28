@@ -75,6 +75,8 @@ export const LandingPageContainer = styled.div`
           font-size: 100%;
         }
       }
+      .cards {
+      }
     }
   }
 
@@ -101,13 +103,15 @@ export const LandingPageContainer = styled.div`
         }
         .dvider {
           background-color: white;
-          margin: 0 60vh 1vh 60vh;
+          margin: 0 45% 1vh 45%;
           height: 2px;
         }
         .text3 {
           color: #ffffff;
           font-size: 160%;
         }
+      }
+      .cards {
       }
     }
   }

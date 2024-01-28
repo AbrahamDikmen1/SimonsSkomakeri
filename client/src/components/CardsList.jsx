@@ -15,29 +15,26 @@ const CardsList = () => {
     <CardsContainer maxWidth="lg">
       <Grid container spacing={3}>
         {Data.map((result, index) => (
-          <Grid item xs={12} md={3} sm={4} key={index}>
+          <Grid item xs={12} md={3} lg={3} sm={4} key={index}>
             <HashLink smooth to={`/services/${result.id}`}>
-              <Card sx={{ maxWidth: 400 }} className="card">
+              <Card sx={{ minwidth: 250 }} className="card">
                 <CardActionArea>
                   <CardMedia
                     className="img"
                     component="img"
                     image={result.img}
                     alt=""
-                    height={250}
+                    style={{ minHeight: 300 }}
                   />
 
-                  <CardContent>
+                  <CardContent style={{ minHeight: 110 }}>
                     <Typography gutterBottom variant="h5" component="div">
                       {result.title}
                     </Typography>
                     <Typography variant="body1" color="text.secondary">
                       {result.des}
                     </Typography>
-                    <div className="desc">
-                      Läs mer
-                      <ArrowForwardIosIcon sx={{ ml: 42 }} fontSize="medium" />
-                    </div>
+                    <div className="desc">Läs mer</div>
                   </CardContent>
                 </CardActionArea>
               </Card>
@@ -54,16 +51,18 @@ export default CardsList;
 export const CardsContainer = styled.div`
   margin: 5vh auto;
   display: flex;
-
+  padding: 5vw;
   * {
     text-decoration: none;
   }
+
   .card {
     /* background-color: transparent; */
     box-shadow: 0 0 10px rgb(69, 101, 126);
     background-color: #d6d1d1;
     backdrop-filter: blur(70px);
     margin: auto;
+
     display: flex;
     cursor: pointer;
 

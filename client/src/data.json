@@ -14,13 +14,13 @@
   {
     "id": "#batteries",
     "title": "Batteribyten",
-    "des": "Batteribyten till klockor, bilnyckel, båtnyckel m.m",
+    "des": "Batteribyten till klockor, bilnyckel m.m",
     "img": "/assets/batteries.jpg"
   },
   {
     "id": "#riding",
     "title": "Ridsport-lagning",
-    "des": "Lagning av ridsports utrustning, sadel, stövlar m.m",
+    "des": "Lagning av ridsports utrustning, stövlar m.m",
     "img": "/assets/sadel.jpg"
   }
 ]
