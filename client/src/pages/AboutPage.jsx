@@ -19,10 +19,7 @@ const AboutPage = () => {
           <Navbar />
           <Divider style={{ backgroundColor: "white" }} />
           <div className="text-container">
-            <div className="text2">Simons sko & nyckelservice</div>
-            <div className="dvider">
-              <Divider />
-            </div>
+       
           </div>
           <Divider style={{ backgroundColor: "white" }} />
         </div>

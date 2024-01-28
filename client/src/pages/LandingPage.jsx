@@ -44,67 +44,70 @@ export const LandingPageContainer = styled.div`
   width: 100%;
   display: flex;
 
-  .container {
-    width: 100%;
-    background-color: black;
-  }
-
   @media only screen and (min-width: 300px) {
-    .text-container {
-      text-align: center;
-      margin: 10vh auto;
+    .container {
+      width: 100%;
+      .text-container {
+        text-align: center;
+        margin: 10vh auto;
 
-      .text1 {
-        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-        color: #ffffff;
-        margin-bottom: 1vh;
-        font-size: 120%;
-      }
-      .text2 {
-        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-        color: #ffffff;
-        margin-bottom: 1.5vh;
-        font-size: 150%;
-      }
-      .dvider {
-        background-color: white;
-        margin: 0 40% 0 40%;
-        height: 2px;
-      }
-      .text3 {
-        color: #ffffff;
-        font-size: 100%;
+        .text1 {
+          font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+            "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+          color: #ffffff;
+          margin-bottom: 1vh;
+          font-size: 130%;
+        }
+        .text2 {
+          font-family: "Franklin Gothic Medium", "Arial Narrow", Arial,
+            sans-serif;
+          color: #ffffff;
+          margin-bottom: 1.5vh;
+          font-size: 160%;
+        }
+        .dvider {
+          background-color: white;
+          margin: 0 40% 0 40%;
+          height: 2px;
+        }
+        .text3 {
+          color: #ffffff;
+          font-size: 100%;
+        }
       }
     }
   }
 
   @media only screen and (min-width: 750px) {
-    .text-container {
-      text-align: center;
-      margin: 10vh auto;
+    .container {
+      width: 100%;
+      .text-container {
+        text-align: center;
+        margin: 10vh auto;
 
-      .text1 {
-        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-        color: #ffffff;
-        margin-bottom: 1vh;
-        font-size: 160%;
-      }
-      .text2 {
-        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-        color: #ffffff;
-        margin-bottom: 1.5vh;
-        font-size: 190%;
-      }
-      .dvider {
-        background-color: white;
-        margin: 0 60vh 1vh 60vh;
-        height: 2px;
-      }
-      .text3 {
-        color: #ffffff;
-        font-size: 120%;
+        .text1 {
+          font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+            "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+          color: #ffffff;
+          margin-bottom: 1vh;
+          font-size: 200%;
+        }
+        .text2 {
+          font-family: "Franklin Gothic Medium", "Arial Narrow", Arial,
+            sans-serif;
+          color: #ffffff;
+          margin-bottom: 1.5vh;
+          font-size: 240%;
+        }
+        .dvider {
+          background-color: white;
+          margin: 0 60vh 1vh 60vh;
+          height: 2px;
+        }
+        .text3 {
+          color: #ffffff;
+          font-size: 160%;
+        }
       }
     }
   }
