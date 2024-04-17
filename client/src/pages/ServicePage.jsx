@@ -38,23 +38,17 @@ const ServicePage = () => {
 
               <h2>Bilnycklar </h2>
               <p>
-                Har du förlorat din bilnyckel eller behöver en reservnyckel? Vi
-                är specialiserade på kopiering av bilnycklar för olika bilmärken
-                och modeller. Snabbt och kostnadseffektivt.
+                Har du endast en bilnyckel och behöver en reserv? Vi gör det
+                enkelt för dig att få en extra kopia av din bilnyckel utan att
+                behöva besöka en fysisk butik. Vår smidiga online-tjänst ger dig
+                möjlighet att kopiera din bilnyckel med några enkla steg.
               </p>
 
-              <h2>Båtnycklar </h2>
+              <h2>Kodade bilnycklar </h2>
               <p>
-                Förlorat båtens nycklar? Vi kan hjälpa dig att skapa exakta
-                kopior för att du snabbt ska kunna njuta av ditt båtägande igen.
-                Våra tjänster omfattar olika båttyper och modeller.
-              </p>
-
-              <h2>Företagsnycklar </h2>
-              <p>
-                För företag erbjuder vi skräddarsydda lösningar för
-                nyckelhantering. Oavsett om det är nycklar till kontor, lager
-                eller andra affärslokaler, kan vi tillgodose dina behov.
+                Vår expertis sträcker sig bortom vanlig nyckelkopiering - vi
+                erbjuder också avancerad kodning för att skapa kopior av dina kodade
+                bilnycklar.
               </p>
             </div>
 
@@ -102,12 +96,6 @@ const ServicePage = () => {
                 Har du problem med din bilnyckel? Våra experter utför snabba och
                 effektiva batteribyten för bilnycklar, vilket säkerställer att
                 du inte hamnar i en situation där du inte kan komma åt din bil.
-              </p>
-              <h2> Båtbatteribyte </h2>
-              <p>
-                För båtägare erbjuder vi batteribyten för olika båttyper. Vi ser
-                till att ditt båtbatteri är i toppskick, vilket är avgörande för
-                en smidig och pålitlig båtupplevelse.
               </p>
             </div>
 
@@ -185,21 +173,25 @@ export const ServicePageContainer = styled.div`
 
         #keys {
           border: solid 2px #ffffff;
+          border-radius: 2vw;
           padding: 2vw;
           margin-bottom: 2vw;
         }
         #shoes {
+          border-radius: 2vw;
           border: solid 2px #ffffff;
           padding: 2vw;
           margin-bottom: 2vw;
         }
         #batteries {
+          border-radius: 2vw;
           border: solid 2px #ffffff;
           padding: 2vw;
           margin-bottom: 2vw;
         }
 
         #riding {
+          border-radius: 2vw;
           border: solid 2px #ffffff;
           padding: 2vw;
           margin-bottom: 2vw;

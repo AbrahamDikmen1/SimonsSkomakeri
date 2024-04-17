@@ -24,7 +24,6 @@ const LandingPage = () => {
           <div className="dvider">
             <Divider />
           </div>
-
           <div className="text3">
             Reperationer av skor, kopiering av nycklar m.m
           </div>
