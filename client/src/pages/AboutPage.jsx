@@ -1,9 +1,8 @@
 import React from "react";
-import { Divider } from "@mui/material";
-import styled from "styled-components";
-import Navbar from "../components/navbar/Navbar";
+
 import servicePage from "../assets/servicePage.jpg";
-import { Button, Typography } from "@material-tailwind/react";
+import { Typography } from "@material-tailwind/react";
+import { Divider } from "@mui/material";
 const AboutPage = () => {
   return (
     <>
@@ -31,7 +30,7 @@ const AboutPage = () => {
             <div className="transparent mx-auto  justify-center  text-start text-white mb-20 ">
               <Typography className="bg-[#2c2a2ae1] p-10 rounded-lg text-center  ">
                 <div id="about">
-                  <p className="text-5xl mb-6"> Vår Historia </p>
+                  <p className="text-4xl mb-6"> Vår Historia </p>
 
                   <p className="text-2xl mb-12 ">
                     Simons Sko & Nyckelservice har en stolt historia med över 20
@@ -40,8 +39,13 @@ const AboutPage = () => {
                     högkvalitativa tjänster med fokus på professionalism och
                     kundnöjdhet.
                   </p>
-
-                  <p className="text-5xl mb-6"> Vår Expertis </p>
+                  <Divider
+                    style={{
+                      backgroundColor: "#ffffff47",
+                      margin: "2% 20% 2% 20%",
+                    }}
+                  />
+                  <p className="text-4xl mb-6"> Vår Expertis </p>
                   <p className="text-2xl mb-12 ">
                     Med över två decennier av erfarenhet är vi stolta över att
                     vara experter inom skoreparationer och nyckelkopiering. Vår
@@ -49,8 +53,13 @@ const AboutPage = () => {
                     och låstekniker, vilket gör oss till din pålitliga partner
                     för att hålla dina skor och nycklar i toppskick.
                   </p>
-
-                  <p className="text-5xl mb-6"> Vårt Åtagande </p>
+                  <Divider
+                    style={{
+                      backgroundColor: "#ffffff47",
+                      margin: "2% 20% 2% 20%",
+                    }}
+                  />
+                  <p className="text-4xl mb-6"> Vårt Åtagande </p>
 
                   <p className="text-2xl mb-12">
                     Vi är dedikerade till att erbjuda snabb, pålitlig och
@@ -58,8 +67,13 @@ const AboutPage = () => {
                     nyckelkopiering behandlas med precision och omsorg, vilket
                     ger dig trygghet och tillfredsställelse.
                   </p>
-
-                  <p className="text-5xl mb-6 "> Varför Välja Oss? </p>
+                  <Divider
+                    style={{
+                      backgroundColor: "#ffffff47",
+                      margin: "2% 20% 2% 20%",
+                    }}
+                  />
+                  <p className="text-4xl mb-6 "> Varför Välja Oss? </p>
                   <p className="text-2xl mb-12">
                     <p>
                       - Erfarenhet: Med över 20 års erfarenhet kan du lita på

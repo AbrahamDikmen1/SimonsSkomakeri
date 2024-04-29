@@ -1,13 +1,9 @@
-import { Button, useTheme } from "@material-tailwind/react";
 import LocalPostOfficeIcon from "@mui/icons-material/LocalPostOffice";
 import TodayIcon from "@mui/icons-material/Today";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import PhoneIcon from "@mui/icons-material/Phone";
-import { Typography, Card, CardBody } from "@material-tailwind/react";
 import { Divider } from "@mui/material";
 const NewsLatterBox = () => {
-  const { theme } = useTheme();
-
   return (
     <div
       className=" items-center mx-auto mb-52 text-center bg-[#2c2a2ae1] p-10 w-fit rounded-lg  "

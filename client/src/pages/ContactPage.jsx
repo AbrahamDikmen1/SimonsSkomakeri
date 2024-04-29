@@ -1,10 +1,9 @@
 import React from "react";
 
-import Breadcrumb from "../components/Common/Breadcrumb";
 import Contact from "../components/Contact";
-import { Button, Typography } from "@material-tailwind/react";
+import { Typography } from "@material-tailwind/react";
 import landing from "../assets/contactPage.jpg";
-import { Navbar } from "@material-tailwind/react";
+
 const ContactPage = () => {
   return (
     <>

@@ -1,9 +1,6 @@
 import React from "react";
-import { Grid } from "@mui/material";
 import Card from "@mui/material/Card";
-import Data from "../data.json";
 import CardContent from "@mui/material/CardContent";
-import makeStyles from "@mui/material";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 

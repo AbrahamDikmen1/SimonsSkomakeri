@@ -1,13 +1,9 @@
 import React from "react";
 import { Divider } from "@mui/material";
-import styled from "styled-components";
-import Navbar from "../components/navbar/Navbar";
-import servicePage from "../assets/servicePage.jpg";
-import { Button, Typography } from "@material-tailwind/react";
+import { Typography } from "@material-tailwind/react";
 import landingPageImg from "../assets/servicePage.jpg";
 import { KeyIcon } from "@heroicons/react/24/solid";
 import { GiChelseaBoot } from "react-icons/gi";
-
 import { GiSteeltoeBoots } from "react-icons/gi";
 import { PiWatchBold } from "react-icons/pi";
 const ServicePage = () => {
