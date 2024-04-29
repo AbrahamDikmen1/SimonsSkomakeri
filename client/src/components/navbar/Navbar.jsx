@@ -1,215 +1,119 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import { Link, useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
+import React from "react";
+import menuData from "../../data/menuData";
 import { useNavigate } from "react-router";
-function Navbar() {
-  const isMobile = window.screen.width < 768;
-  const [active, setActive] = useState("nav__menu");
-  const [icon, setIcon] = useState("nav__toggler");
-  const navToggle = () => {
-    if (active === "nav__menu") {
-      setActive("nav__menu nav__active");
-    } else setActive("nav__menu");
+import { NavLink } from "react-router-dom";
+import { Divider } from "@mui/material";
 
-    // Icon Toggler
-    if (icon === "nav__toggler") {
-      setIcon("nav__toggler toggle");
-    } else setIcon("nav__toggler");
-  };
+const Header = () => {
   const navigate = useNavigate();
+
+  // Navbar toggle
+  const [navbarOpen, setNavbarOpen] = useState(false);
+  const navbarToggleHandler = () => {
+    setNavbarOpen(!navbarOpen);
+  };
+
+  // Sticky Navbar
+  const [sticky, setSticky] = useState(false);
+  const handleStickyNavbar = () => {
+    if (window.scrollY >= 80) {
+      setSticky(true);
+    } else {
+      setSticky(false);
+    }
+  };
+  useEffect(() => {
+    window.addEventListener("scroll", handleStickyNavbar);
+  });
+
+  // submenu handler
+
+  const usePathName = useLocation();
+
   return (
-    <NavbarContainer>
-      <nav className="nav">
-        <div className="nav__brand" onClick={() => navigate("/")}>
-          Simons sko & nyckelservice
+    <>
+      <header
+        className={`header left-0 top-0 z-40 flex w-full items-center ${
+          sticky
+            ? "dark:bg-gray-dark dark:shadow-sticky-dark fixed z-[9999] bg-[#19191d] !bg-opacity-80 shadow-sticky backdrop-blur-sm transition"
+            : "absolute bg-transparent"
+        }  
+        
+     `}
+      >
+        <div className="container left-2/4 z-10 mx-auto">
+          <div className="relative -mx-2 flex items-center justify-between">
+            <div className="w-70 max-w-full px-12 xl:mr-12 mt-5">
+              <NavLink
+                to="/"
+                className={`header-logo  w-full ${
+                  sticky ? "py-5 lg:py-2" : "py-6"
+                } `}
+              >
+                <div className="text-white mb-5" onClick={() => navigate("/")}>
+                  Simons sko & nyckelservice
+                </div>
+              </NavLink>
+            </div>
+            <div>
+              <button
+                onClick={navbarToggleHandler}
+                id="navbarToggler"
+                aria-label="Mobile Menu"
+                className="absolute right-10 top-1/2 block translate-y-[-50%] rounded-lg px-3 py-[6px] ring-primary focus:ring-2 lg:hidden"
+              >
+                <span
+                  className={`relative my-1.5 block h-0.5 w-[30px] bg-black transition-all duration-300 dark:bg-white ${
+                    navbarOpen ? " top-[7px] rotate-45" : " "
+                  }`}
+                />
+                <span
+                  className={`relative my-1.5 block h-0.5 w-[30px] bg-black transition-all duration-300 dark:bg-white ${
+                    navbarOpen ? "opacity-0 " : " "
+                  }`}
+                />
+                <span
+                  className={`relative my-1.5 block h-0.5 w-[30px] bg-black transition-all duration-300 dark:bg-white ${
+                    navbarOpen ? " top-[-8px] -rotate-45" : " "
+                  }`}
+                />
+              </button>
+              <nav
+                id="navbarCollapse"
+                className={` navbar absolute right-0 z-30 w-[250px] rounded border-[.5px] border-body-color/50  bg-[#757b9c] px-6 py-4 duration-300 dark:border-body-color/20 dark:bg-dark lg:visible lg:static lg:w-auto lg:border-none lg:!bg-transparent lg:p-0 lg:opacity-100 ${
+                  navbarOpen
+                    ? "visibility top-full opacity-100"
+                    : "invisible top-[120%] opacity-0"
+                }`}
+              >
+                <ul className="block lg:flex lg:space-x-12 lg:mb-4">
+                  {menuData.map((menuItem, index) => (
+                    <li key={index} className="group relative">
+                      {menuItem.path && (
+                        <Link
+                          to={menuItem.path}
+                          className={`flex py-2 text-base lg:mr-0 lg:inline-flex lg:px-0 lg:py-5 ${
+                            usePathName === menuItem.path
+                              ? "text-primary dark:text-white"
+                              : "text-dark hover:text-primary dark:text-white/70 dark:hover:text-white"
+                          }`}
+                        >
+                          {menuItem.title}{" "}
+                        </Link>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+            </div>
+          </div>
+          <Divider className="bg-white mt-0" />
         </div>
-
-        <ul className={active}>
-          <li className="nav__item">
-            <div className="link_container">
-              <a href="/about" className="nav__link">
-                Om oss
-                {isMobile && (
-                  <ArrowForwardIosIcon className="nav__link_arrow" />
-                )}
-              </a>
-            </div>
-          </li>
-
-          <li className="nav__item">
-            <div className="link_container">
-              {" "}
-              <a href="/contact" className="nav__link">
-                Kontakta oss
-                {isMobile && (
-                  <ArrowForwardIosIcon className="nav__link_arrow" />
-                )}
-              </a>
-            </div>
-          </li>
-
-          <li className="nav__item">
-            <div className="link_container">
-              {" "}
-              <a href="/services" className="nav__link">
-                Sortiment
-                {isMobile && (
-                  <ArrowForwardIosIcon className="nav__link_arrow" />
-                )}
-              </a>
-            </div>
-          </li>
-        </ul>
-        <div onClick={navToggle} className={icon}>
-          <div className="line1"></div>
-          <div className="line2"></div>
-          <div className="line3"></div>
-        </div>
-      </nav>
-    </NavbarContainer>
+      </header>
+    </>
   );
-}
-export default Navbar;
-export const NavbarContainer = styled.div`
-  width: 100%;
+};
 
-  li {
-    list-style: none;
-  }
-
-  a {
-    text-decoration: none;
-    letter-spacing: 0.5px;
-    color: white;
-    font-size: 20px;
-    &:hover {
-      color: #848586;
-      transition: 0.3s ease-in;
-    }
-  }
-  .nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    height: 8vh;
-    background-color: transparent;
-  }
-  .nav__brand {
-    margin-top: 0.5em;
-    cursor: pointer;
-    text-decoration: none;
-    letter-spacing: 0.5px;
-    color: white;
-    font-size: 20px;
-  }
-  .logo {
-    width: "100%";
-    height: 60px;
-    &:hover {
-      border: 2px solid #757b9c;
-    }
-  }
-
-  .nav__menu {
-    display: flex;
-    gap: 3rem;
-  }
-  .nav__toggler {
-    display: none;
-  }
-
-  .nav__toggler div {
-    width: 2.5rem;
-    height: 0.2rem;
-    margin: 0.4rem;
-    background: rgb(204, 204, 204);
-    transition: 0.3s ease-in;
-  }
-
-  @media screen and (max-width: 768px) {
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-      height: 8vh;
-      background-color: #faf9f9fb;
-    }
-
-    .nav__brand {
-      text-align: center;
-      margin-left: 5em;
-      color: #46495c;
-    }
-    .nav__toggler {
-      display: block;
-      cursor: pointer;
-      margin-right: 1em;
-    }
-    .nav__menu {
-      overflow: hidden;
-      z-index: 999;
-      position: fixed;
-      top: 6.1vh;
-      right: 0;
-      height: 100%;
-      width: 95vw;
-      background-color: #faf9f9fb;
-      flex-direction: column;
-      transform: translateX(100%);
-      transition: 0.5s ease-in;
-    }
-    .nav__item {
-      margin-top: 1.7rem;
-    }
-    .nav__menu {
-      gap: 0rem;
-    }
-
-    .nav__link_divider {
-      margin-top: 1em;
-      margin-right: 2em;
-    }
-    .nav__link {
-      letter-spacing: 0.5px;
-      display: flex;
-      justify-content: space-between;
-      display: flex;
-      margin-right: 2rem;
-      color: #46495c;
-    }
-
-    .nav_auth_links {
-      width: 87%;
-      bottom: 0;
-      margin-bottom: 5em;
-      position: absolute;
-    }
-    p {
-      font-size: 1.2em;
-      color: #46495c;
-      font-weight: bold;
-    }
-    .nav__link_arrow {
-      font-size: 1em;
-    }
-  }
-
-  /* Active Class */
-  .nav__active {
-    transform: translateX(0%);
-  }
-
-  /* Toggle Icon Animation */
-
-  .toggle .line1 {
-    width: 2.2rem;
-    transform: rotate(-45deg) translate(-4px, 6px);
-  }
-  .toggle .line2 {
-    opacity: 0;
-  }
-  .toggle .line3 {
-    width: 2.2rem;
-    transform: rotate(45deg) translate(-4px, -6px);
-  }
-`;
+export default Header;
